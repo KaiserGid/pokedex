@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class PokemonDetails extends StatelessWidget {
-  const PokemonDetails({
+class PokemonDetailsWidget extends StatelessWidget {
+  const PokemonDetailsWidget({
     Key? key,
   }) : super(key: key);
 
@@ -24,9 +24,7 @@ class PokemonDetails extends StatelessWidget {
             Text('Details', style: Theme.of(context).textTheme.titleSmall),
             Text('Moves', style: Theme.of(context).textTheme.titleSmall),
             Text('Stats', style: Theme.of(context).textTheme.titleSmall),
-            const SizedBox(
-              width: 64,
-            )
+            const SizedBox(width: 64),
           ],
         ),
         Row(

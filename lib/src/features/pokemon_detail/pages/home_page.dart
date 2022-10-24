@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/src/features/home/widgets/name_and%20types_widget.dart';
-import 'package:pokedex/src/features/home/widgets/image_header_widget.dart';
-import 'package:pokedex/src/features/home/widgets/pokemon_details.dart';
-import 'package:pokedex/src/features/home/widgets/classification_status_widget.dart';
+import 'package:pokedex/src/features/pokemon_detail/widgets/name_and%20types_widget.dart';
+import 'package:pokedex/src/features/pokemon_detail/widgets/image_header_widget.dart';
+import 'package:pokedex/src/features/pokemon_detail/widgets/classification_status_widget.dart';
+import 'package:pokedex/src/features/pokemon_detail/widgets/pokemon_details_widget.dart';
 import 'package:pokedex/src/shared/colors.dart';
 
 class HomePage extends StatelessWidget {
@@ -27,13 +27,20 @@ class HomePage extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text('Next'),
+                  Text(
+                    'Next',
+                    style: Theme.of(context).textTheme.labelSmall,
+                  ),
                   Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: const [
-                        Text('Picachu'),
-                        Icon(Icons.arrow_forward_ios_outlined, size: 8),
-                      ]),
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Picachu',
+                        style: Theme.of(context).textTheme.labelSmall,
+                      ),
+                      const Icon(Icons.arrow_forward_ios_outlined, size: 8),
+                    ],
+                  ),
                 ],
               ),
             )
@@ -46,7 +53,7 @@ class HomePage extends StatelessWidget {
             const ImageHeaderWidget(),
             const AtributesWidget(),
             const StatusWidget(),
-            const PokemonDetails(),
+            const PokemonDetailsWidget(),
           ],
         ));
   }

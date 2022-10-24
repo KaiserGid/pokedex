@@ -13,7 +13,7 @@ class ImageHeaderWidget extends StatelessWidget {
       decoration: const BoxDecoration(
           image: DecorationImage(
               image: NetworkImage(
-                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png'))),
+                  'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png'))),
       child: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
