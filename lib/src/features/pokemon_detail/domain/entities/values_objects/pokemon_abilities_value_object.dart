@@ -1,7 +1,7 @@
-class Abilities {
+class Ability {
   String name;
 
-  Abilities({
+  Ability({
     required this.name,
   });
 }

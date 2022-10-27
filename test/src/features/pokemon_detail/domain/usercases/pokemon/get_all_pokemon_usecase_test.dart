@@ -18,27 +18,28 @@ void main() {
 
       when((() => pokemonRepository.pokemons())).thenAnswer((_) async => [
             PokemonEntity(
-                name: 'name',
-                urlImage: 'urlImage',
-                types: <TypesEntity>[],
-                abilities: <Abilities>[],
-                height: 8.0,
-                weight: 5.6,
-                gender: 'male'),
+              name: 'name',
+              urlImage: 'urlImage',
+              types: <TypesEntity>[],
+              abilities: <Ability>[],
+              height: 8.0,
+              weight: 5.6,
+            ),
             PokemonEntity(
-                name: 'name2',
-                urlImage: 'urlImage2',
-                types: <TypesEntity>[],
-                abilities: <Abilities>[],
-                height: 2.0,
-                weight: 1.6,
-                gender: 'female'),
+              name: 'name2',
+              urlImage: 'urlImage2',
+              types: <TypesEntity>[],
+              abilities: <Ability>[],
+              height: 2.0,
+              weight: 1.6,
+            ),
           ]);
 
       final list = await getAllPokemonsUsecase.call();
 
       expect(list.isNotEmpty, equals(true));
       expect(list.length, equals(2));
+      expect(list[0].name, equals('name'));
     },
   );
 }
