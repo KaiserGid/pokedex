@@ -4,11 +4,14 @@ import 'package:pokedex/src/features/pokemon_detail/domain/entities/pokemon_enti
 class PokemonAdpter {
   static adapter(PokemonModel pokemon) {
     return PokemonEntity(
-        name: pokemon.name,
-        urlImage: pokemon.urlImage,
-        types: pokemon.types,
-        abilities: pokemon.abilities,
-        height: pokemon.height,
-        weight: pokemon.weight);
+      name: pokemon.name,
+      urlImage: pokemon.urlImage,
+      types: pokemon.types,
+      abilities: pokemon.abilities,
+      height: pokemon.height,
+      weight: pokemon.weight,
+      color: pokemon.color,
+      gender: pokemon.gender,
+    );
   }
 }

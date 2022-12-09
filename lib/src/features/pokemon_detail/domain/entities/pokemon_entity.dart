@@ -5,9 +5,12 @@ class PokemonEntity {
   final String name;
   final String urlImage;
   final List<TypesEntity> types;
-  final List<Ability> abilities;
+  final List<AbilityEntity> abilities;
   final double height;
   final double weight;
+  final String gender;
+
+  final String color;
 
   PokemonEntity({
     required this.name,
@@ -16,5 +19,7 @@ class PokemonEntity {
     required this.abilities,
     required this.height,
     required this.weight,
+    required this.gender,
+    required this.color,
   });
 }

@@ -1,7 +1,7 @@
-class Ability {
-  String name;
+class AbilityEntity {
+  final String name;
 
-  Ability({
+  AbilityEntity({
     required this.name,
   });
 }

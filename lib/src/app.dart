@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/src/features/pokemon_detail/pages/home_page.dart';
+import 'package:pokedex/src/features/pokemon_detail/presenter/pages/pokemons.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -16,9 +16,11 @@ class App extends StatelessWidget {
             titleLarge: TextStyle(color: Colors.white),
             titleSmall: TextStyle(color: Colors.white),
             labelSmall: TextStyle(color: Colors.white),
+            labelMedium: TextStyle(color: Colors.white),
+            labelLarge: TextStyle(color: Colors.white),
           ),
           iconTheme: const IconThemeData(color: Colors.white)),
-      home: const HomePage(),
+      home: const Pokemons(),
     );
   }
 }
