@@ -5,19 +5,19 @@ import 'package:pokedex/src/features/pokemon_detail/presenter/widgets/image_head
 import 'package:pokedex/src/features/pokemon_detail/presenter/widgets/name_and%20types_widget.dart';
 import 'package:pokedex/src/features/pokemon_detail/presenter/widgets/pokemon_details_widget.dart';
 
-class HomePage extends StatefulWidget {
+class PokemonDetailPage extends StatefulWidget {
   final PokemonEntity pokemon;
 
-  const HomePage({
+  const PokemonDetailPage({
     Key? key,
     required this.pokemon,
   }) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<PokemonDetailPage> createState() => _PokemonDetailPageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _PokemonDetailPageState extends State<PokemonDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

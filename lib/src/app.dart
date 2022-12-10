@@ -20,7 +20,7 @@ class App extends StatelessWidget {
             labelLarge: TextStyle(color: Colors.white, fontFamily: 'Oswald'),
           ),
           iconTheme: const IconThemeData(color: Colors.white)),
-      home: const Pokemons(),
+      home: const PokemonsPage(),
     );
   }
 }

@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex/src/features/pokemon_detail/domain/entities/pokemon_entity.dart';
-import 'package:pokedex/src/features/pokemon_detail/presenter/pages/home_page.dart';
+import 'package:pokedex/src/features/pokemon_detail/presenter/pages/pokemon_detail_page.dart';
 
 import '../../data/repositories_imp/pokemon_repository_imp.dart';
 import '../../domain/usercases/pokemon/get_all_pokemon_usecase.dart';
 import '../../external/pokemon_datasource.dart';
 
-class Pokemons extends StatefulWidget {
-  const Pokemons({Key? key}) : super(key: key);
+class PokemonsPage extends StatefulWidget {
+  const PokemonsPage({Key? key}) : super(key: key);
 
   @override
-  State<Pokemons> createState() => _PokemonsState();
+  State<PokemonsPage> createState() => _PokemonsPageState();
 }
 
-class _PokemonsState extends State<Pokemons> {
+class _PokemonsPageState extends State<PokemonsPage> {
   @override
   Widget build(BuildContext context) {
     final PokemonDataSource dataSource = PokemonDataSource();
@@ -69,7 +69,7 @@ class CustomCard extends StatelessWidget {
         onTap: () => Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => HomePage(pokemon: pokemon))),
+                builder: (context) => PokemonDetailPage(pokemon: pokemon))),
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height * 0.15,
