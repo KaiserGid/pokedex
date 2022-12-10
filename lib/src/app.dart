@@ -9,15 +9,15 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       theme: ThemeData(
           brightness: Brightness.light,
           textTheme: const TextTheme(
-            titleLarge: TextStyle(color: Colors.white),
-            titleSmall: TextStyle(color: Colors.white),
-            labelSmall: TextStyle(color: Colors.white),
-            labelMedium: TextStyle(color: Colors.white),
-            labelLarge: TextStyle(color: Colors.white),
+            titleLarge: TextStyle(color: Colors.white, fontFamily: 'Oswald'),
+            titleSmall: TextStyle(color: Colors.white, fontFamily: 'Oswald'),
+            labelSmall: TextStyle(color: Colors.white, fontFamily: 'Oswald'),
+            labelMedium: TextStyle(color: Colors.white, fontFamily: 'Oswald'),
+            labelLarge: TextStyle(color: Colors.white, fontFamily: 'Oswald'),
           ),
           iconTheme: const IconThemeData(color: Colors.white)),
       home: const Pokemons(),

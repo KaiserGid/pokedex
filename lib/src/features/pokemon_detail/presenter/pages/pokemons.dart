@@ -24,36 +24,90 @@ class _PokemonsState extends State<Pokemons> {
 
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Pokedex'),
+          title: const Text('Pokemons'),
+          foregroundColor: Colors.blue,
+          backgroundColor: Colors.transparent,
+          elevation: 0,
         ),
         body: FutureBuilder<List<PokemonEntity>>(
-            future: getPokemon.call(),
+            future: getPokemon(),
             builder: (context, snapshot) => snapshot.hasData
                 ? ListView.builder(
                     itemCount: snapshot.hasData ? snapshot.data!.length : 0,
-                    itemBuilder: ((context, index) => Column(
-                          children: [
-                            ListTile(
-                                onTap: () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => HomePage(
-                                            pokemon: snapshot.data![index]))),
-                                title: Text(
-                                    snapshot.data![index].name.toUpperCase()),
-                                subtitle:
-                                    Text(snapshot.data![index].types[0].name),
-                                trailing: Text(
-                                    '${snapshot.data![index].weight.toString()} Kg'),
-                                leading: Image.network(
-                                    snapshot.data![index].urlImage)),
-                            // Text(snapshot.data![index].abilities[0].name),
-                          ],
+                    itemBuilder: ((context, index) => CustomCard(
+                          pokemon: snapshot.data![index],
                         )),
                   )
                 : const Center(
                     child: PokemonProgressIndicator(),
                   )));
+  }
+}
+
+class CustomCard extends StatelessWidget {
+  final PokemonEntity pokemon;
+
+  const CustomCard({
+    Key? key,
+    required this.pokemon,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    // return ListTile(
+    //     onTap: () => Navigator.push(
+    //         context,
+    //         MaterialPageRoute(
+    //             builder: (context) => HomePage(pokemon: pokemon))),
+    //     title: Text(pokemon.name.toUpperCase()),
+    //     subtitle: Text(pokemon.types[0].name),
+    //     trailing: Text('${pokemon.weight.toString()} Kg'),
+    //     leading: Image.network(pokemon.urlImage));
+    return Padding(
+      padding: const EdgeInsets.only(top: 8, right: 16),
+      child: GestureDetector(
+        onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => HomePage(pokemon: pokemon))),
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height * 0.15,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              CircleAvatar(
+                radius: 80,
+                backgroundColor: getColor(pokemon),
+                child: Image.network(
+                  scale: 1.0,
+                  pokemon.urlImage,
+                  loadingBuilder: (context, child, loadingProgress) =>
+                      loadingProgress == null
+                          ? child
+                          : const CircularProgressIndicator(),
+                ),
+              ),
+              Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                Text(
+                  pokemon.name.toUpperCase(),
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    fontFamily: 'Oswald',
+                  ),
+                ),
+                Text(pokemon.types[0].name)
+              ]),
+              Text('${pokemon.weight.toString()} Kg')
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
 

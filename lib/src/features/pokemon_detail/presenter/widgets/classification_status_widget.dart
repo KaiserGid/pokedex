@@ -20,24 +20,29 @@ class StatusWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Tipo', style: Theme.of(context).textTheme.bodySmall),
-                Text(
-                  classification,
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-              ],
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Tipo', style: Theme.of(context).textTheme.bodySmall),
+                  Text(
+                    classification,
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ],
+              ),
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text('Abilities', style: Theme.of(context).textTheme.bodySmall),
-                Text(abilities),
-              ],
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('Abilidades',
+                      style: Theme.of(context).textTheme.bodySmall),
+                  Text(abilities),
+                ],
+              ),
             ),
           ],
         ),

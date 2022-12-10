@@ -24,10 +24,10 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: getColor(widget.pokemon),
         extendBodyBehindAppBar: true,
         appBar: AppBar(
-          title: Text(
-            'Detalhes',
-            style: Theme.of(context).textTheme.titleSmall,
-          ),
+          // title: Text(
+          //   'Detalhes',
+          //   style: Theme.of(context).textTheme.titleSmall,
+          // ),
           centerTitle: false,
           backgroundColor: Colors.transparent,
           leading: GestureDetector(
@@ -79,7 +79,8 @@ class _HomePageState extends State<HomePage> {
                         e.name[0].toUpperCase() +
                         e.name.substring(1).toLowerCase())
                     .join(", "),
-                abilities: widget.pokemon.abilities.first.name),
+                abilities:
+                    widget.pokemon.abilities.map((e) => e.name).join(', ')),
             PokemonDetailsWidget(
               pokemonHeight: widget.pokemon.height,
               pokemonWeight: widget.pokemon.weight,

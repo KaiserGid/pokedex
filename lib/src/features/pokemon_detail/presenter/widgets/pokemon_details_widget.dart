@@ -25,42 +25,42 @@ class PokemonDetailsWidget extends StatelessWidget {
       ),
       child:
           Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Text('Details', style: Theme.of(context).textTheme.titleSmall),
-            Text('Moves', style: Theme.of(context).textTheme.titleSmall),
-            Text('Stats', style: Theme.of(context).textTheme.titleSmall),
-            const SizedBox(width: 64),
-          ],
-        ),
+        // Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //   children: [
+        //     Text('Details', style: Theme.of(context).textTheme.titleSmall),
+        //     Text('Moves', style: Theme.of(context).textTheme.titleSmall),
+        //     Text('Stats', style: Theme.of(context).textTheme.titleSmall),
+        //     const SizedBox(width: 64),
+        //   ],
+        // ),
         Row(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Height', style: Theme.of(context).textTheme.labelSmall),
-                Text('$pokemonHeight',
-                    style: Theme.of(context).textTheme.titleSmall),
+                Text('Altura', style: Theme.of(context).textTheme.titleLarge),
+                Text('$pokemonHeight m',
+                    style: Theme.of(context).textTheme.titleLarge),
               ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('weight', style: Theme.of(context).textTheme.labelSmall),
-                Text('$pokemonWeight',
-                    style: Theme.of(context).textTheme.titleSmall),
+                Text('Peso', style: Theme.of(context).textTheme.titleLarge),
+                Text('$pokemonWeight kg',
+                    style: Theme.of(context).textTheme.titleLarge),
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text('gender', style: Theme.of(context).textTheme.labelSmall),
-                const Icon(Icons.female),
-              ],
-            ),
+            // Column(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     Text('gender', style: Theme.of(context).textTheme.labelSmall),
+            //     const Icon(Icons.female),
+            //   ],
+            // ),
           ],
         ),
       ]),

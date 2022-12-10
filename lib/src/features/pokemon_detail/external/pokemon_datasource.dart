@@ -10,7 +10,7 @@ class PokemonDataSource implements IDataSource {
   Future<Map<String, dynamic>> fetchData() async {
     Dio dio = Dio();
     Response response =
-        await dio.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=20');
+        await dio.get('https://pokeapi.co/api/v2/pokemon?offset=0&limit=50');
     return response.data;
   }
 
