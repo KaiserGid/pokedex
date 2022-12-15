@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokedex/src/features/pokemon_detail/presenter/pages/pokemons.dart';
+import 'package:pokedex/src/features/pokemon_detail/presenter/pages/pokemons_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
